@@ -50,7 +50,7 @@ if(isset($_SESSION['unique_id'])){
     }
 
     // Echo the output
-    echo $output;
+    echo htmlspecialchars($output, ENT_QUOTES, 'UTF-8');
 
 }else{
     // If user is not logged in, redirect to login page

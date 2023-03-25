@@ -31,12 +31,12 @@ include_once "header.php";
 <?php if ($_SESSION["is_guest"] === 0) { ?>
                 <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
 <?php } ?>
-                <img src="php/images/<?php echo $row["img"]; ?>" alt="">
+                <img src="php/images/<?php echo htmlspecialchars("$row["img"]", ENT_QUOTES, 'UTF-8'); ?>" alt="">
                 <div class="details">
-                    <span><?php echo $row["fname"] .
+                    <span><?php echo htmlspecialchars("$row["fname"]", ENT_QUOTES, 'UTF-8') .
                         " " .
-                        $row["lname"]; ?></span>
-                    <p><?php echo $row["status"]; ?></p>
+                        htmlspecialchars("$row["lname"]", ENT_QUOTES, 'UTF-8'); ?></span>
+                    <p><?php echo htmlspecialchars("$row["status"]", ENT_QUOTES, 'UTF-8'); ?></p>
                 </div>
 <?php if ($_SESSION["is_guest"] === 1) { ?>
     <a href="php/logout.php" class="logout" style='float:right'>Close</a>

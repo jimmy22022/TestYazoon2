@@ -10,5 +10,5 @@ if(mysqli_num_rows($query) == 0) { // Checks if there are no rows returned by th
 } elseif(mysqli_num_rows($query) > 0) { // Checks if there are rows returned by the query
     include_once "data.php"; // Includes a file to generate the user list
 }
-echo $output; // Prints the output variable to the screen
+echo htmlspecialchars($output, ENT_QUOTES, 'UTF-8'); // Prints the output variable to the screen
 ?>
